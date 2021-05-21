@@ -11,14 +11,30 @@ namespace Ex04.Menus.Interfaces
         private UnderMenu m_GeneralMenu;
         //private readonly int m_MenuLevel = 1;
 
-        public MainMenu(UnderMenu i_GeneralMenu, int i_MenuLevel, string i_MenuName)
+        public MainMenu(string i_PressedButton, int i_MenuLevel, string i_MenuName)
         {
-            m_GeneralMenu = new UnderMenu();
+            m_GeneralMenu = new UnderMenu(i_PressedButton, i_MenuLevel, i_MenuName);
         }
 
-        public static void show()
+        ////Properties:
+        public UnderMenu GeneralMenu
+        {
+            get
+            {
+                return m_GeneralMenu;
+            }
+
+            set
+            {
+                m_GeneralMenu = value;
+            }
+        }
+
+       
+        public void show()
         {
 
+            GeneralMenu.show();
         }
 
     }
