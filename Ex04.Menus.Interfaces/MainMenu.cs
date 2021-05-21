@@ -6,15 +6,20 @@ namespace Ex04.Menus.Interfaces
 {
     class MainMenu
     {
-        public enum eLevel
+       
+
+        private UnderMenu m_GeneralMenu;
+        //private readonly int m_MenuLevel = 1;
+
+        public MainMenu(UnderMenu i_GeneralMenu, int i_MenuLevel, string i_MenuName)
         {
-           First = 1,
-           Second = 2,
+            m_GeneralMenu = new UnderMenu();
         }
 
-        private UnderMenu m_GeneralMenu = new UnderMenu();
-        private readonly eLevel m_MenuLevel = eLevel.First;
+        public static void show()
+        {
 
+        }
 
     }
 }
