@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Ex04.Menus.Test
 {
-    class InterfaceUI
+    public class InterfaceUI
     {
+        public void EntryPoint()
+        {
+
+        }
     }
 }
