@@ -4,16 +4,14 @@ using System.Text;
 
 namespace Ex04.Menus.Interfaces
 {
-    class MainMenu
+    public class MainMenu
     {
-       
-
         private UnderMenu m_GeneralMenu;
-        //private readonly int m_MenuLevel = 1;
+        private const byte k_MenuLevel = 1;
 
-        public MainMenu(string i_PressedButton, int i_MenuLevel, string i_MenuName)
+        public MainMenu(string i_MenuName)
         {
-            m_GeneralMenu = new UnderMenu(i_PressedButton, i_MenuLevel, i_MenuName);
+            m_GeneralMenu = new UnderMenu(i_MenuName);
         }
 
         ////Properties:
@@ -30,11 +28,15 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-       
-        public void show()
+        public void AddItem(MenuItem newItem)
+        {
+            m_GeneralMenu.AddMenu(newItem);
+        }
+
+        public void Show()
         {
 
-            GeneralMenu.show();
+            GeneralMenu.Show(k_MenuLevel);
         }
 
     }
