@@ -12,10 +12,10 @@ namespace Ex04.Menus.Test
             MainMenu menu = new MainMenu("Main Menu");
             UnderMenu spacesAndVersion = new UnderMenu("Spaces and Version");
             UnderMenu showDateAndTime = new UnderMenu("Show Date/Time");
-            MenuItem version = new MenuItem("Show Version");
-            MenuItem space = new MenuItem("Count Spaces");
-            MenuItem time = new MenuItem("Show Time");
-            MenuItem date = new MenuItem("Show Date");
+            ShowVersion version = new ShowVersion("Show Version");
+            CountSpaces space = new CountSpaces("Count Spaces");
+            ShowTime time = new ShowTime("Show Time");
+            ShowDate date = new ShowDate("Show Date");
 
             menu.AddItem(spacesAndVersion);
             menu.AddItem(showDateAndTime);

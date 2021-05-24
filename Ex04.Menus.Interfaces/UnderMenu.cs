@@ -40,6 +40,8 @@ namespace Ex04.Menus.Interfaces
                 else
                 {
                     menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
+                    //menuBody.Append("Level " + m_CurrentLevel + " - " + m_MenuOptions[i_CurerrentLevel].MenuName);
+
                 }
 
                 menuBody.Append(Environment.NewLine);
