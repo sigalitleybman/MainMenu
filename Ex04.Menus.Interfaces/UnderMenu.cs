@@ -63,12 +63,14 @@ namespace Ex04.Menus.Interfaces
                 }
 
                 Console.WriteLine(menuBody);
+                menuBody = new StringBuilder(); // ########################################
                 choice = UserChoice();
                 if (choice != 0)
                 {
                     m_LastPressedButton = m_MenuOptions[choice].MenuName;
                     if (m_MenuOptions[choice] is UnderMenu)
                     {
+                        m_LastPressedButton = m_MenuOptions[choice].MenuName;
                         m_CurrentLevel += 1;
                         Console.Clear();
                         (m_MenuOptions[choice] as UnderMenu).Show(m_CurrentLevel);
