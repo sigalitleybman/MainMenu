@@ -28,23 +28,32 @@ namespace Ex04.Menus.Interfaces
             StringBuilder menuBody = new StringBuilder();
             string separateLine = new string('~', 20);
             string options = string.Empty;
-            byte choice = 255;
+            byte choice = 1;
 
             m_CurrentLevel = i_CurerrentLevel;
             while (choice != k_IndexBackOrExit)
             {
-                if (m_LastPressedButton == null)
-                {
-                    menuBody.Append("Level " + m_CurrentLevel + " - " + MenuName);
-                }
-                else
-                {
-                    //menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
-                    // menuBody.Append("Level " + m_CurrentLevel + " - " + m_MenuOptions[choice].MenuName);
-                    //menuBody.Append("Level " + m_CurrentLevel + " - " + (m_MenuOptions[--m_CurrentLevel] as UnderMenu).MenuName);
-                    menuBody.Append("Level " + m_CurrentLevel + " - " + this.MenuName);
+                menuBody.Append("Level " + m_CurrentLevel + " - " + MenuName);
+                //if (m_LastPressedButton == null)
+                //{
+                //    menuBody.Append("Level " + m_CurrentLevel + " - " + MenuName);
+                //}
+                //else
+                //{
+                //    menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
+                //}
+                //else if(recursionFlag == true)
+                //{
+                //    //menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
+                //    // menuBody.Append("Level " + m_CurrentLevel + " - " + m_MenuOptions[choice].MenuName);
+                //    //menuBody.Append("Level " + m_CurrentLevel + " - " + (m_MenuOptions[--m_CurrentLevel] as UnderMenu).MenuName);
 
-                }
+                //    menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
+                //}
+                //else
+                //{
+                //    menuBody.Append("Level " + m_CurrentLevel + " - " + this.MenuName);
+                //}
 
                 menuBody.Append(Environment.NewLine);
                 menuBody.Append(separateLine);
@@ -67,15 +76,16 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine(menuBody);
                 menuBody = new StringBuilder(); // ########################################
                 choice = UserChoice();
+                Console.Clear();
                 if (choice != 0)
                 {
-                    m_LastPressedButton = m_MenuOptions[choice].MenuName;
+                    //m_LastPressedButton = m_MenuOptions[choice].MenuName;
                     if (m_MenuOptions[choice] is UnderMenu)
                     {
-                        m_LastPressedButton = m_MenuOptions[choice].MenuName;///############
-                        m_CurrentLevel += 1;
-                        Console.Clear();
-                        (m_MenuOptions[choice] as UnderMenu).Show(m_CurrentLevel);
+                       // m_LastPressedButton = m_MenuOptions[choice].MenuName;///############
+                        //m_CurrentLevel += 1;
+                        byte nextLevel =(byte)(m_CurrentLevel+ 1);
+                        (m_MenuOptions[choice] as UnderMenu).Show(nextLevel);
                     }
                     else if (m_MenuOptions[choice] is IRunnable)
                     {
@@ -83,7 +93,6 @@ namespace Ex04.Menus.Interfaces
                     }
                 }
             }
-
         }
 
         public string BackOrExitTreatment(byte m_CurrentLevel)

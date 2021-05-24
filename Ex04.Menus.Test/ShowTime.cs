@@ -14,7 +14,7 @@ namespace Ex04.Menus.Test
 
         public void Run()
         {
-            Console.WriteLine("The current time is: " + DateTime.Now);
+            Console.WriteLine("The current time is: {0:00}:{1:00}:{2:00} ",DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
         }
     }
 }

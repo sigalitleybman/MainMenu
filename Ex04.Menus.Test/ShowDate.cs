@@ -14,7 +14,7 @@ namespace Ex04.Menus.Test
 
         public void Run()
         {
-            Console.WriteLine("The current date is: " + DateTime.Today);
+            Console.WriteLine("The current date is: " + DateTime.Today.Day + "\\" + DateTime.Today.Month + "\\" + DateTime.Today.Year);
         }
     }
 }
