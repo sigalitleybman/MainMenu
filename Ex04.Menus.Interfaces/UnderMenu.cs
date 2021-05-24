@@ -39,8 +39,10 @@ namespace Ex04.Menus.Interfaces
                 }
                 else
                 {
-                    menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
-                    //menuBody.Append("Level " + m_CurrentLevel + " - " + m_MenuOptions[i_CurerrentLevel].MenuName);
+                    //menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
+                    // menuBody.Append("Level " + m_CurrentLevel + " - " + m_MenuOptions[choice].MenuName);
+                    //menuBody.Append("Level " + m_CurrentLevel + " - " + (m_MenuOptions[--m_CurrentLevel] as UnderMenu).MenuName);
+                    menuBody.Append("Level " + m_CurrentLevel + " - " + this.MenuName);
 
                 }
 
@@ -70,7 +72,7 @@ namespace Ex04.Menus.Interfaces
                     m_LastPressedButton = m_MenuOptions[choice].MenuName;
                     if (m_MenuOptions[choice] is UnderMenu)
                     {
-                        m_LastPressedButton = m_MenuOptions[choice].MenuName;
+                        m_LastPressedButton = m_MenuOptions[choice].MenuName;///############
                         m_CurrentLevel += 1;
                         Console.Clear();
                         (m_MenuOptions[choice] as UnderMenu).Show(m_CurrentLevel);

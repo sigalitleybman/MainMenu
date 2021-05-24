@@ -4,3 +4,9 @@ C:\Users\97254\GitProjects\MainMenu\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.I
 C:\Users\97254\GitProjects\MainMenu\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.pdb
 C:\Users\97254\GitProjects\MainMenu\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.dll
 C:\Users\97254\GitProjects\MainMenu\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.pdb
+C:\Users\zurbinsky\github-repos\MainMenu\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll
+C:\Users\zurbinsky\github-repos\MainMenu\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.pdb
+C:\Users\zurbinsky\github-repos\MainMenu\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.csprojAssemblyReference.cache
+C:\Users\zurbinsky\github-repos\MainMenu\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\zurbinsky\github-repos\MainMenu\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.dll
+C:\Users\zurbinsky\github-repos\MainMenu\Ex04.Menus.Interfaces\obj\Debug\Ex04.Menus.Interfaces.pdb
