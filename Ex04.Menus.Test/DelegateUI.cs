@@ -9,7 +9,7 @@ namespace Ex04.Menus.Test
     {
         public void EntryPoint()
         {
-            MainMenu menu = new MainMenu("Main Menu");
+            MainMenu menu = new MainMenu("Main Menu - Delegates");
             UnderMenu spacesAndVersion = new UnderMenu("Spaces and Version");
             UnderMenu showDateAndTime = new UnderMenu("Show Date/Time");
             Action version = new Action("Show Version");

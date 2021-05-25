@@ -6,7 +6,6 @@ namespace Ex04.Menus.Delegates
 {
     public class UnderMenu : MenuItem
     {
-       // private string m_LastPressedButton;
         private byte m_CurrentLevel;
         private const byte k_IndexBackOrExit = 0;
         private const string k_Back = "Back";
@@ -23,14 +22,14 @@ namespace Ex04.Menus.Delegates
         public void Show(byte i_CurerrentLevel)
         {
             StringBuilder menuBody = new StringBuilder();
-            string separateLine = new string('~', 25);
+            string separateLine = new string('~', 20);
             string options = string.Empty;
             byte choice = 1;
 
             m_CurrentLevel = i_CurerrentLevel;
             while (choice != k_IndexBackOrExit)
             {
-                menuBody.Append("Level " + m_CurrentLevel + " - " + MenuName);
+                menuBody.Append(MenuName);
                 menuBody.Append(Environment.NewLine);
                 menuBody.Append(separateLine);
                 menuBody.Append(Environment.NewLine);
@@ -44,13 +43,12 @@ namespace Ex04.Menus.Delegates
                     {
                         options = String.Format("{0}) {1}", menuOption.Key, menuOption.Value.MenuName);
                     }
-
                     menuBody.Append(options);
                     menuBody.Append(Environment.NewLine);
                 }
 
                 Console.WriteLine(menuBody);
-                menuBody = new StringBuilder();/////////////////####$%^&*$@!!@$^&%
+                menuBody.Remove(0, menuBody.Length);
                 choice = UserChoice();
                 Console.Clear();
                 if (choice != 0)
