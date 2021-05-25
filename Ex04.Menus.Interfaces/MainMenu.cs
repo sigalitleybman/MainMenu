@@ -28,16 +28,14 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        public void AddItem(MenuItem newItem)
+        public void AddItem(MenuItem i_NewItem)
         {
-            m_GeneralMenu.AddMenu(newItem);
+            m_GeneralMenu.AddMenu(i_NewItem);
         }
 
         public void Show()
         {
-
             GeneralMenu.Show(k_MenuLevel);
         }
-
     }
 }

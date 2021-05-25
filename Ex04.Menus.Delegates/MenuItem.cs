@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public abstract class MenuItem//buttom
+    public abstract class MenuItem
     {
         private string m_MenuName;
 
@@ -26,7 +26,5 @@ namespace Ex04.Menus.Delegates
                 m_MenuName = value;
             }
         }
-
-
     }
 }

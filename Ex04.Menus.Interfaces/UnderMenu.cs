@@ -6,7 +6,7 @@ namespace Ex04.Menus.Interfaces
 {
     public class UnderMenu : MenuItem
     {
-        private string m_LastPressedButton;
+        //private string m_LastPressedButton;
         private byte m_CurrentLevel;
         private const byte k_IndexBackOrExit = 0;
         private const string k_Back = "Back";
@@ -14,11 +14,8 @@ namespace Ex04.Menus.Interfaces
         private Dictionary<byte, MenuItem> m_MenuOptions;
         private byte m_OptionNumber = 1;
 
-        public UnderMenu(string i_MenuName) : 
-               base(i_MenuName)
+        public UnderMenu(string i_MenuName) : base(i_MenuName)
         {
-            //m_LastPressedButton = i_LastPressedButton;
-            //m_CurrentLevel = i_CurrentLevel;
             m_MenuOptions = new Dictionary<byte, MenuItem>();
             m_MenuOptions.Add(0, null);
         }
@@ -26,7 +23,7 @@ namespace Ex04.Menus.Interfaces
         public void Show(byte i_CurerrentLevel)
         {
             StringBuilder menuBody = new StringBuilder();
-            string separateLine = new string('~', 20);
+            string separateLine = new string('~', 25);
             string options = string.Empty;
             byte choice = 1;
 
@@ -34,27 +31,6 @@ namespace Ex04.Menus.Interfaces
             while (choice != k_IndexBackOrExit)
             {
                 menuBody.Append("Level " + m_CurrentLevel + " - " + MenuName);
-                //if (m_LastPressedButton == null)
-                //{
-                //    menuBody.Append("Level " + m_CurrentLevel + " - " + MenuName);
-                //}
-                //else
-                //{
-                //    menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
-                //}
-                //else if(recursionFlag == true)
-                //{
-                //    //menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
-                //    // menuBody.Append("Level " + m_CurrentLevel + " - " + m_MenuOptions[choice].MenuName);
-                //    //menuBody.Append("Level " + m_CurrentLevel + " - " + (m_MenuOptions[--m_CurrentLevel] as UnderMenu).MenuName);
-
-                //    menuBody.Append("Level " + m_CurrentLevel + " - " + m_LastPressedButton);
-                //}
-                //else
-                //{
-                //    menuBody.Append("Level " + m_CurrentLevel + " - " + this.MenuName);
-                //}
-
                 menuBody.Append(Environment.NewLine);
                 menuBody.Append(separateLine);
                 menuBody.Append(Environment.NewLine);
@@ -79,11 +55,8 @@ namespace Ex04.Menus.Interfaces
                 Console.Clear();
                 if (choice != 0)
                 {
-                    //m_LastPressedButton = m_MenuOptions[choice].MenuName;
                     if (m_MenuOptions[choice] is UnderMenu)
                     {
-                       // m_LastPressedButton = m_MenuOptions[choice].MenuName;///############
-                        //m_CurrentLevel += 1;
                         byte nextLevel =(byte)(m_CurrentLevel+ 1);
                         (m_MenuOptions[choice] as UnderMenu).Show(nextLevel);
                     }
@@ -95,11 +68,11 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        public string BackOrExitTreatment(byte m_CurrentLevel)
+        public string BackOrExitTreatment(byte i_CurrentLevel)
         {
             string backOrExit = string.Empty;
 
-            if (m_CurrentLevel == 1)
+            if (i_CurrentLevel == 1)
             {
                 backOrExit = string.Format("{0}) {1}", 0, k_Exit);
             }
@@ -119,7 +92,7 @@ namespace Ex04.Menus.Interfaces
 
             Console.WriteLine("Please enter your choice.");
             choice = Console.ReadLine();
-            while (!byte.TryParse(choice, out updatedChoice) || (updatedChoice < 0 || updatedChoice > m_MenuOptions.Count))
+            while (!byte.TryParse(choice, out updatedChoice) || (updatedChoice < 0 || updatedChoice > m_MenuOptions.Count - 1))
             {
                 Console.WriteLine("You entered a wrong choice. Please try again.");
                 choice = Console.ReadLine();

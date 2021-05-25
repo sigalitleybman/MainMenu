@@ -8,6 +8,11 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
+            StartingPoint();
+        }
+
+        public static void StartingPoint()
+        {
             InterfaceUI interfaceObj = new InterfaceUI();
             DelegateUI delegatesObj = new DelegateUI();
 

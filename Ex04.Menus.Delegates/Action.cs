@@ -6,14 +6,13 @@ namespace Ex04.Menus.Delegates
 {
     public class Action : MenuItem
     {
-        public delegate void PickedInvoker();
+        public delegate void PickedChoiceHandler();
 
         public Action(string i_ItemName) : base(i_ItemName)
         {
-
         }
 
-        public event PickedInvoker pickedChoice;
+        public event PickedChoiceHandler pickedChoice;
 
         protected virtual void OnPickedChoice()
         {
@@ -29,15 +28,3 @@ namespace Ex04.Menus.Delegates
         }
     }
 }
-//protected virtual void OnCommandChoosen()
-//{
-//    if (CommandChoosen != null)
-//    {
-//        CommandChoosen.Invoke();
-//    }
-//}
-
-//public void RunChosenAction()
-//{
-//    OnCommandChoosen();
-//}

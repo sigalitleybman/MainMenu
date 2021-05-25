@@ -10,7 +10,6 @@ namespace Ex04.Menus.Test
     {
         public ShowTime(string i_Operation) : base(i_Operation)
         {
-
         }
 
         public void Run()

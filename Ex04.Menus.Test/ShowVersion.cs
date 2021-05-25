@@ -10,7 +10,6 @@ namespace Ex04.Menus.Test
     {
         public ShowVersion(string i_Operation) : base(i_Operation)
         {
-
         }
 
         public void Run()
@@ -22,7 +21,5 @@ namespace Ex04.Menus.Test
         {
             Console.WriteLine("Version: 21.1.4.8930");
         }
-
-
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Ex04.Menus.Interfaces;
-//using Ex04.Menus.Delegates;
 
 namespace Ex04.Menus.Test
 {
@@ -10,7 +9,6 @@ namespace Ex04.Menus.Test
     {
         public CountSpaces(string i_Operation) : base(i_Operation)
         {
-
         }
 
         public void Run()
