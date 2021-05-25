@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Ex04.Menus.Interfaces;
+using Ex04.Menus.Delegates;
 
 namespace Ex04.Menus.Test
 {
-    public class InterfaceUI
+    public class DelegateUI
     {
         public void EntryPoint()
         {
             MainMenu menu = new MainMenu("Main Menu");
             UnderMenu spacesAndVersion = new UnderMenu("Spaces and Version");
             UnderMenu showDateAndTime = new UnderMenu("Show Date/Time");
-            ShowVersion version = new ShowVersion("Show Version");
-            CountSpaces space = new CountSpaces("Count Spaces");
-            ShowTime time = new ShowTime("Show Time");
-            ShowDate date = new ShowDate("Show Date");
+            Action version = new Action("Show Version");
+            Action space = new Action("Count Spaces");
+            Action time = new Action("Show Time");
+            Action date = new Action("Show Date");
 
             menu.AddItem(spacesAndVersion);
             menu.AddItem(showDateAndTime);
@@ -23,6 +23,10 @@ namespace Ex04.Menus.Test
             spacesAndVersion.AddMenu(space);
             showDateAndTime.AddMenu(time);
             showDateAndTime.AddMenu(date);
+            version.pickedChoice += ShowVersion.ShowVersionDelegate;
+            space.pickedChoice += CountSpaces.CountSpacesDelegate;
+            time.pickedChoice += ShowTime.ShowTimeDelegate;
+            date.pickedChoice += ShowDate.ShowDateDelegate;
             menu.Show();
         }
     }

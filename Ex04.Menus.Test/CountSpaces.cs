@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Ex04.Menus.Interfaces;
+//using Ex04.Menus.Delegates;
 
 namespace Ex04.Menus.Test
 {
@@ -21,7 +22,25 @@ namespace Ex04.Menus.Test
             userSentence = Console.ReadLine();
             foreach (char letter in userSentence)
             {
-                if (letter == ' ')
+                if (letter == ' ' || letter == 9)
+                {
+                    counterOfSpaces++;
+                }
+            }
+
+            Console.WriteLine("There were " + counterOfSpaces + " spaces");
+        }
+
+        public static void CountSpacesDelegate()
+        {
+            string userSentence = string.Empty;
+            int counterOfSpaces = 0;
+
+            Console.WriteLine("Please enter a sentence");
+            userSentence = Console.ReadLine();
+            foreach (char letter in userSentence)
+            {
+                if (letter == ' ' || letter == 9)
                 {
                     counterOfSpaces++;
                 }

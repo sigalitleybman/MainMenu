@@ -9,8 +9,10 @@ namespace Ex04.Menus.Test
         public static void Main()
         {
             InterfaceUI interfaceObj = new InterfaceUI();
+            DelegateUI delegatesObj = new DelegateUI();
 
             interfaceObj.EntryPoint();
+            delegatesObj.EntryPoint();
         }
     }
 }
